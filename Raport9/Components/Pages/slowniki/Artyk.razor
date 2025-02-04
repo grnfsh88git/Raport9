@@ -1,0 +1,41 @@
+﻿@page "/artykul"
+@rendermode InteractiveServer
+@using Raport9.Services
+@using Raport9.Models
+@inject ArtService ArtService
+
+<h1>Lista art</h1>
+
+
+<button @onclick="HandleSumit">Wcisnij</button>
+<button @onclick="przepisz">TYLKO PRZEPISZ</button>
+<label>wpisany tekst: @tekst</label>
+
+
+
+@code {
+    string tekst { get; set; } = "nic";
+    Prezentacja prezentacja = new Prezentacja();
+    public void HandleSumit()
+    {
+        tekst = "zaczynam";
+        Prezentacja nowyWpis = new Prezentacja();
+        nowyWpis.Kiedy = "01.02.2025";
+        nowyWpis.Id = 141755;
+        try
+        {
+            ArtService.Addprezentacja(nowyWpis, tekst);
+        }
+        catch (Exception ex)
+        { tekst = ex.Message; }
+
+        tekst = tekst + "kliknietre";
+        StateHasChanged();
+    }
+    public void przepisz()
+    {
+        tekst = "przepisane";
+        StateHasChanged();
+    }
+  
+}

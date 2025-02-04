@@ -1,0 +1,29 @@
+﻿@page "/napisz"
+@rendermode InteractiveServer
+
+<h3>Wpisz tekst i kliknij przycisk:</h3>
+
+<input @bind="UserInput" placeholder="Wpisz coś..." />
+
+<button @onclick="SubmitText">Przepisz tekst</button>
+
+<p><strong>Wpisany tekst:@LabelText</strong> @LabelText</p>
+<p>Aktualny czas: @DateTime.Now</p>
+
+<button @onclick="button1">Przepisz tekst</button>
+
+@code {
+
+    private string UserInput { get; set; } = "";
+    private string LabelText { get; set; } = "nic";
+
+    public void SubmitText()
+    {
+        LabelText = UserInput; // Przepisuje tekst z inputa do LabelText
+        StateHasChanged(); // Wymusza odświeżenie UI
+    }
+    private void button1()
+    {
+        LabelText = "button";
+    }
+}

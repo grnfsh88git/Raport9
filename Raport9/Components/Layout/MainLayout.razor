@@ -1,0 +1,23 @@
+﻿@inherits LayoutComponentBase
+<style>
+    /* Zmiana koloru tekstu w nagłówku h1 */
+    h1-nieb {
+        color: #3498db; /* Ustawia kolor tekstu na niebieski */
+    }
+</style>
+
+<div class="main-layout">
+    <header>
+        
+        <nav class="navbar">
+
+            <h1-nieb>DZIAŁ AUTOMATYKI</h1-nieb>
+
+            <Menu />  @* Tutaj osadzamy komponent Menu *@
+        </nav>
+    </header>
+    <div class="content">
+        @Body
+    </div>
+</div>
+

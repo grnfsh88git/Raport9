@@ -1,0 +1,147 @@
+.main-layout {
+    background-color: white;
+}
+
+.navbar {
+    background-color: #000000;
+    padding: 10px;
+    margin-top: 10px; /* Odstêp nad tekstem */
+    margin-bottom: 10px; /* Odstêp pod tekstem */
+    padding-top: 10px; /* Padding wewnêtrzny nad tekstem */
+    padding-bottom: 10px; /* Padding wewnêtrzny pod tekstem */
+    border: 1px solid #ccc; /* Dla lepszej widocznoœci */
+    border-radius: 5px;
+}
+
+.btn {
+    background-color: #0078D7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* P³ynne przejœcie koloru */
+}
+    .btn:hover {
+        background-color: #4e9ede;
+    }
+
+.btn-alt {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* P³ynne przejœcie koloru */
+}
+
+    .btn-alt:hover {
+        background-color: #f3bb62;
+    }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease; /* P³ynna zmiana t³a i koloru czcionki */
+}
+
+.dropdown-alt {
+    position: relative;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease; /* P³ynna zmiana t³a i koloru czcionki */
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Ustawienie poni¿ej przycisku */
+    left: 0;
+    background-color: #ade9fe;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: 150px;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu-alt {
+    display: none;
+    position: absolute;
+    top: 100%; /* Ustawienie poni¿ej przycisku */
+    left: 0;
+    background-color: #ffe0a6;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: 150px;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.dropdown-item {
+    padding: 10px;
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown-alt-item {
+    padding: 10px;
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-alt {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown:hover .dropdown-menu {
+    display: block
+}
+
+.dropdown-alt:hover .dropdown-menu-alt {
+    display: block
+}
+
+.dropdown-menu li:hover {
+    background-color: #00a1d7;
+}
+
+.dropdown-menu-alt li:hover {
+    background-color: #ffca68;
+}
+/* Definiowanie stylu dla przycisku o klasie .btn-zapisz */
+.btn-zapisz {
+    background-color: green; /* T³o przycisku */
+    color: white; /* Kolor tekstu */
+    padding: 10px 20px; /* Wewnêtrzny margines */
+    border: none; /* Brak obramowania */
+    border-radius: 5px; /* Zaokr¹glone rogi */
+    cursor: pointer; /* Kursor w postaci rêki */
+    font-size: 16px; /* Rozmiar czcionki */
+    transition: background-color 0.3s ease; /* P³ynne przejœcie t³a */
+}
+
+    /* Opcjonalny efekt na hover */
+    .btn-zapisz:hover {
+        background-color: greenyellow; /* Zmiana koloru t³a na ciemniejszy podczas najechania */
+    }
