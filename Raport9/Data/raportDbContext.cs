@@ -12,7 +12,7 @@ namespace Raport9.Data
         {
 
         }
-        public DbSet<Artykul> Arts { get; set; }
+        public DbSet<Artykul> art { get; set; }
         public DbSet<Prezentacja> Prezentacjas { get; set; }
 
     }

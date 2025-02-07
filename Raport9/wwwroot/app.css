@@ -1,20 +1,30 @@
 .main-layout {
     background-color: white;
 }
+nav {
+    display: block;
+    width: 100%;
 
+}
 .navbar {
+    display: flex;
+    justify-content: flex-start; /* Wyrównanie elementów do lewej */
+    align-items: center; /* Wyœrodkowanie w pionie */
+    width: 100%;
     background-color: #000000;
     padding: 10px;
-    margin-top: 10px; /* Odstêp nad tekstem */
-    margin-bottom: 10px; /* Odstêp pod tekstem */
-    padding-top: 10px; /* Padding wewnêtrzny nad tekstem */
-    padding-bottom: 10px; /* Padding wewnêtrzny pod tekstem */
-    border: 1px solid #ccc; /* Dla lepszej widocznoœci */
-    border-radius: 5px;
+    box-sizing: border-box;
+}
+.content {
+    width: 100%; /* Zapewnienie, ¿e treœæ zajmie ca³¹ szerokoœæ */
+    margin-top: 20px; /* Dystans od menu */
+    padding: 20px;
 }
 
-.btn {
-    background-color: #0078D7;
+.btn-moj {
+    width:250px;
+    
+    background-color: #296dff;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -23,11 +33,12 @@
     font-size: 16px;
     transition: background-color 0.3s ease; /* P³ynne przejœcie koloru */
 }
-    .btn:hover {
-        background-color: #4e9ede;
+    .btn-moj:hover {
+        background-color: #299fff;
     }
 
 .btn-alt {
+    width: 250px;
     background-color: orange;
     color: white;
     padding: 10px 20px;
@@ -46,6 +57,9 @@
     position: relative;
     display: inline-block;
     transition: background-color 0.3s ease, color 0.3s ease; /* P³ynna zmiana t³a i koloru czcionki */
+    justify-content: flex-start; /* Przyciskom bli¿ej lewej */
+    position: relative;
+    display: inline-block;
 }
 
 .dropdown-alt {
@@ -54,12 +68,15 @@
     transition: background-color 0.3s ease, color 0.3s ease; /* P³ynna zmiana t³a i koloru czcionki */
 }
 
-.dropdown-menu {
+.dropdown-menuss {
+    text-align: left; /* Wyrównanie tekstu do lewej */
+    padding-left: 10px !important; /* Opcjonalny odstêp od lewej krawêdzi */
+    width: 250px;
     display: none;
     position: absolute;
     top: 100%; /* Ustawienie poni¿ej przycisku */
     left: 0;
-    background-color: #ade9fe;
+    background-color: #299fff !important;
     border: 1px solid #ddd;
     border-radius: 5px;
     list-style: none;
@@ -71,6 +88,9 @@
 }
 
 .dropdown-menu-alt {
+    text-align: left; /* Wyrównanie tekstu do lewej */
+    padding-left: 10px !important; /* Opcjonalny odstêp od lewej krawêdzi */
+    width: 250px;
     display: none;
     position: absolute;
     top: 100%; /* Ustawienie poni¿ej przycisku */
@@ -103,10 +123,7 @@
 
 
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+
 
 .dropdown-alt {
     position: relative;
@@ -114,7 +131,7 @@
 }
 
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menuss {
     display: block
 }
 
@@ -122,8 +139,8 @@
     display: block
 }
 
-.dropdown-menu li:hover {
-    background-color: #00a1d7;
+.dropdown-menuss li:hover {
+    background-color: #296dff !important;
 }
 
 .dropdown-menu-alt li:hover {
@@ -131,7 +148,7 @@
 }
 /* Definiowanie stylu dla przycisku o klasie .btn-zapisz */
 .btn-zapisz {
-    background-color: green; /* T³o przycisku */
+    background-color: cornflowerblue; /* T³o przycisku */
     color: white; /* Kolor tekstu */
     padding: 10px 20px; /* Wewnêtrzny margines */
     border: none; /* Brak obramowania */
@@ -140,8 +157,14 @@
     font-size: 16px; /* Rozmiar czcionki */
     transition: background-color 0.3s ease; /* P³ynne przejœcie t³a */
 }
-
-    /* Opcjonalny efekt na hover */
-    .btn-zapisz:hover {
-        background-color: greenyellow; /* Zmiana koloru t³a na ciemniejszy podczas najechania */
-    }
+.btn-czarn {
+    width: 250px;
+    background-color: black; /* T³o przycisku */
+    color: black; /* Kolor tekstu */
+    padding: 10px 20px; /* Wewnêtrzny margines */
+    border: none; /* Brak obramowania */
+    border-radius: 5px; /* Zaokr¹glone rogi */
+    cursor: pointer; /* Kursor w postaci rêki */
+    font-size: 16px; /* Rozmiar czcionki */
+    transition: background-color 0.3s ease; /* P³ynne przejœcie t³a */
+}

@@ -4,38 +4,49 @@
 @using Raport9.Models
 @inject ArtService ArtService
 
+
+
 <h1>Lista art</h1>
 
+<h3>Lista produktów</h3>
 
-<button @onclick="HandleSumit">Wcisnij</button>
-<button @onclick="przepisz">TYLKO PRZEPISZ</button>
-<label>wpisany tekst: @tekst</label>
-
-
+@if (Artykuly == null)
+{
+    <p>Ładowanie danych...</p>
+}
+else if (!Artykuly.Any())
+{
+    <p>Brak produktów.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Art</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Artykuly)
+            {
+                <tr>
+                    <td>@product.Id</td>
+                    <td>@product.Art</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
 @code {
-    string tekst { get; set; } = "nic";
-    Prezentacja prezentacja = new Prezentacja();
-    public void HandleSumit()
-    {
-        tekst = "zaczynam";
-        Prezentacja nowyWpis = new Prezentacja();
-        nowyWpis.Kiedy = "01.02.2025";
-        nowyWpis.Id = 141755;
-        try
-        {
-            ArtService.Addprezentacja(nowyWpis, tekst);
-        }
-        catch (Exception ex)
-        { tekst = ex.Message; }
+    private List<Artykul> Artykuly;
 
-        tekst = tekst + "kliknietre";
-        StateHasChanged();
-    }
-    public void przepisz()
+    protected override async Task OnInitializedAsync()
     {
-        tekst = "przepisane";
-        StateHasChanged();
+        Artykuly = await ArtService.GetArtykulyAsync();
+       
     }
-  
 }
+
+
